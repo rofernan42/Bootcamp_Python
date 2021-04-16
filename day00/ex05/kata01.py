@@ -1,7 +1,7 @@
 languages = {
-	'Python': 'Guido van Rossum',
-	'Ruby' : 'Yukihiro Matsumoto',
-	'PHP' : 'Rasmus Lerdorf',
+    'Python': 'Guido van Rossum',
+    'Ruby': 'Yukihiro Matsumoto',
+    'PHP': 'Rasmus Lerdorf',
 }
-for lang, name in languages.items(): 
-	print("{} was created by {}".format(lang, name))
+for i in languages:
+    print(i + " was created by " + languages[i])

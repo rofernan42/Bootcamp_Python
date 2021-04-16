@@ -1,23 +1,9 @@
-def text_analyzer(txt):
-	"""\nThis function counts the number of upper characters, lower characters, punctuation and spaces in a given text.\n"""
-	if not txt:
-		txt = input("What is the text to anayze?\n")
-	upp = 0
-	low = 0
-	pct = 0
-	spc = 0
-	for c in txt:
-		if (c.isupper()):
-			upp += 1
-		if (c.islower()):
-			low += 1
-		if (c.isalnum() or c.isspace()) == False:
-			pct += 1
-		if c.isspace():
-			spc += 1
-	print("The text contains", len(txt), "characters:")
-	print("-", upp, "upper letters")
-	print("-", low, "lower letters")
-	print("-", pct, "punctuation marks")
-	print("-", spc, "spaces")
-# Python 2.0, released 2000, introduced features like List comprehensions and a garbage collection system capable of collecting reference cycles.
+def text_analyzer(text=""):
+    "\nThis function counts the number of upper characters, lower characters, punctuation and spaces in a given text."
+    while (len(text) == 0):
+        text = input("What is the text to analyse?\n")
+    print("The text contains " + "%s" % len(text) + " characters:")
+    print("- " + "%s" % sum(c.isupper() for c in text) + " upper letters")
+    print("- " + "%s" % sum(c.islower() for c in text) + " lower letters")
+    print("- " + "%s" % (len(text) - sum(c.isalnum() for c in text) - sum(c.isspace() for c in text)) + " punctuation marks")
+    print("- " + "%s" % sum(c.isspace() for c in text) + " spaces")
